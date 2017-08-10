@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'LeagueSpartan';
+  src:  url('./fonts/league-spartan/LeagueSpartan-Bold.otf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'HKGrotesk';
+  src:  url('./fonts/hk-grotesk/HKGrotesk-Light.otf');
+  font-weight: 300;
+}
+
 body {
   position: relative;
   min-width: 320px;
@@ -116,7 +128,7 @@ img {
 .catalog-item__item-1 {
   width: 100%;
   background-color: rgb(190, 201, 205);
-  /* background-image: url('../img/product-1.jpg'); */
+  background-image: url('./img/product-1.jpg'); 
 }
 
 .catalog-item__item-1 .catalog-item__btn {
@@ -127,7 +139,7 @@ img {
 .catalog-item__item-2 {
   align-items: flex-end;
   background-color: #62b8c1;
-  /* background-image: url('../img/product-2.jpg'); */
+  background-image: url('./img/product-2.jpg'); 
 }
 
 .catalog-item__item-2 .catalog-item__desc {
@@ -136,18 +148,18 @@ img {
 
 .catalog-item__item-3 {
   background-color: #757dc9;
-  /* background-image: url('../img/product-3.jpg'); */
+  background-image: url('./img/product-3.jpg');
 }
 
 .catalog-item__item-4 {
   background-color: #eb7c61;
-  /* background-image: url('../img/product-4.jpg'); */
+  background-image: url('./img/product-4.jpg');
 }
 
 .catalog-item__item-5 {
   justify-content: flex-end;
   background-color: #537683;
-  /* background-image: url('../img/product-5.jpg'); */
+  background-image: url('./img/product-5.jpg');
 }
 
 .catalog-item__item-5 .catalog-item__desc {
@@ -156,7 +168,7 @@ img {
 
 .catalog-item__item-6 {
   background-color: #81cade;
-  /* background-image: url('../img/product-6.jpg'); */
+  background-image: url('./img/product-6.jpg'); 
 }
 
 .catalog-item__desc {

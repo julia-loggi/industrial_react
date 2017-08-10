@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import indLogo from './logo.svg';
 import './Style.css';
 import searchLogo from './img/search.svg'
+import product1 from './img/product-1.jpg'
 
 class Content extends Component {
   render() {
