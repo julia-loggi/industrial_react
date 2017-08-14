@@ -1,7 +1,7 @@
 {
   "name": "industrial",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://JulieSemenova.github.io/industrial_react",
   "private": true,
   "dependencies": {
     "gh-pages": "^1.0.0",
