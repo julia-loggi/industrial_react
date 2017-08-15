@@ -35,7 +35,7 @@ class SearchForm extends Component {
     return (
       <form 
         className="page-header__search"
-        action="#" 
+        action="https://echo.htmlacademy.ru"
         method="get"
       >
         <div className="field-text">
@@ -64,25 +64,67 @@ class Subscribe extends Component  {
         <p className="subscribe__text">
           For the latest stories, news, events, promotions and exclusive offers, sign up today. We know you get a lot of emails, but we promise...ours is the one you want.
         </p>
-        <form className="subscribe__form" action="#" method="post">
-          <div className="field-text field-text--email">
-            <label className="field-text__item">
-              <input 
-                className="field-text__input" 
-                type="email" 
-                name="email" 
-                autoComplete="on" 
-                placeholder="Your email"
-                />
-            </label>
-          </div>
-          <input 
-            className="subscribe__btn btn" 
-            type="submit" 
-            value="Subscribe"
-          />
-        </form>
+        <Form />
       </div>
+    );
+  }
+}
+
+class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "",
+      emailIsEmpty: true
+      };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
+  handleChange(event) {
+    this.setState({value: event.target.value});
+    if ( event.target.value.trim().length > 0 ) {
+      this.setState({emailIsEmpty: false})
+    } else {
+      this.setState({emailIsEmpty: true})
+    }
+  }
+  
+  handleSubmit(event) {
+    alert('We\'ll send you an email on ' + this.state.value);
+    //event.preventDefault();
+  }
+  
+  render() {
+    var emailIsEmpty = this.state.emailIsEmpty;
+    
+    return (
+      <form 
+        className="subscribe__form" 
+        action="https://echo.htmlacademy.ru" 
+        method="post"
+      >
+        <div className="field-text field-text--email">
+          <label className="field-text__item">
+            <input 
+              className="field-text__input" 
+              type="email" 
+              name="email" 
+              autoComplete="on" 
+              placeholder="Your email"
+              ref="email"
+              onChange={this.handleChange}
+              />
+          </label>
+        </div>
+        <input 
+          className="subscribe__btn btn" 
+          type="submit" 
+          value="Subscribe"
+          onClick={this.handleSubmit}
+          disabled = {emailIsEmpty}
+        />
+      </form>
     );
   }
 }
@@ -125,7 +167,7 @@ var catalogItems = [
   },
   {
     name: "Molekule",
-    description: "The world\"s first molecular air purifier",
+    description: "The world's first molecular air purifier",
     moreAbout: "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor.",
     btn: "details",
     index: "4",
@@ -184,7 +226,8 @@ class Item extends Component {
         <p className="catalog-item__desc">{description}</p>
         <a
           onClick={this.readmoreClick}
-          className={"catalog-item__btn btn btn--"+btn} 
+          className={"catalog-item__btn btn btn--"+btn}
+          tabIndex="0"
         >
           {btn}
         </a>
