@@ -91,8 +91,7 @@ class Form extends Component {
   }
   
   handleSubmit(event) {
-    alert('We\'ll send you an email on ' + this.state.value);
-    //event.preventDefault();
+    event.preventDefault();
   }
   
   render() {
