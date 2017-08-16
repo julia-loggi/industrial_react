@@ -50,6 +50,21 @@ img {
   align-self: center;
 }
 
+.form {
+  background-color: transparent;
+}
+
+.form__error {
+  position: relative;
+  font-style: italic;
+}
+
+.form__error-message p {
+  position: absolute;
+  top: -24px;
+  margin: 0;
+}
+
 .btn {
   display: inline-block;
   width: 122px;

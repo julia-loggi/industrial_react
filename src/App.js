@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import logo from "./logo.svg";
 import "./Style.css";
-import searchLogo from "./img/search.svg"
+import searchLogo from "./img/search.svg";
+import Form from './Form.js'
 
 class Content extends Component {
   render() {
@@ -35,7 +36,7 @@ class SearchForm extends Component {
     return (
       <form 
         className="page-header__search"
-        action="https://echo.htmlacademy.ru"
+        action="https://echo.htmlacademy.ru" 
         method="get"
       >
         <div className="field-text">
@@ -70,63 +71,7 @@ class Subscribe extends Component  {
   }
 }
 
-class Form extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: "",
-      emailIsEmpty: true
-      };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  
-  handleChange(event) {
-    this.setState({value: event.target.value});
-    if ( event.target.value.trim().length > 0 ) {
-      this.setState({emailIsEmpty: false})
-    } else {
-      this.setState({emailIsEmpty: true})
-    }
-  }
-  
-  handleSubmit(event) {
-    event.preventDefault();
-  }
-  
-  render() {
-    var emailIsEmpty = this.state.emailIsEmpty;
-    
-    return (
-      <form 
-        className="subscribe__form" 
-        action="https://echo.htmlacademy.ru" 
-        method="post"
-      >
-        <div className="field-text field-text--email">
-          <label className="field-text__item">
-            <input 
-              className="field-text__input" 
-              type="email" 
-              name="email" 
-              autoComplete="on" 
-              placeholder="Your email"
-              ref="email"
-              onChange={this.handleChange}
-              />
-          </label>
-        </div>
-        <input 
-          className="subscribe__btn btn" 
-          type="submit" 
-          value="Subscribe"
-          onClick={this.handleSubmit}
-          disabled = {emailIsEmpty}
-        />
-      </form>
-    );
-  }
-}
+
 
 class Main extends Component {
   render () {
