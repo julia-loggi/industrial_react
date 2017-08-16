@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import logo from "./logo.svg";
 import "./Style.css";
 import searchLogo from "./img/search.svg";
-import Form from './Form.js'
+import Form from "./Form.js"
 
 class Content extends Component {
   render() {

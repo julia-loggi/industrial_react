@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {FormErrors} from './FormErrors.js'
+import {FormErrors} from "./FormErrors.js"
 
 
 class Form extends Component {
@@ -26,7 +26,7 @@ class Form extends Component {
     let emailValid = this.state.emailValid;
     
     switch(fieldName) {
-      case 'email':
+      case "email":
         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
         fieldValidationErrors.email = emailValid ? "" : " is invalid";
         break;
